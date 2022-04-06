@@ -20,6 +20,7 @@ public class UserRegistration {
         System.out.println("Welcome to User Registration Program");
         user.firstNameCheck();
         user.lastNameCheck();
+        user.email();
     }
     public void lastNameCheck() {
         Scanner sc = new Scanner(System.in);
@@ -30,5 +31,15 @@ public class UserRegistration {
             System.out.println("Perfect! LastName");
         else
             System.out.println("Please Enter a Valid Last Name");
+    }
+    public void email() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Email of User: ");
+        String eMail = sc.next();
+        boolean check = Pattern.matches("^[a-z]*([.]?[a-z]+)*@bl[.]co([.]?in)*", eMail);
+        if (check)
+            System.out.println("Perfect! Email!");
+        else
+            System.out.println("Please Enter a Valid Email");
     }
 }
