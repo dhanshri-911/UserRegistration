@@ -19,6 +19,16 @@ public class UserRegistration {
         UserRegistration user = new UserRegistration();
         System.out.println("Welcome to User Registration Program");
         user.firstNameCheck();
+        user.lastNameCheck();
     }
-
+    public void lastNameCheck() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Last Name of User: ");
+        String lName = sc.next();
+        boolean check = Pattern.matches("^[A-Z]{1}+[a-z]{3,}$", lName);
+        if (check)
+            System.out.println("Perfect! LastName");
+        else
+            System.out.println("Please Enter a Valid Last Name");
+    }
 }
