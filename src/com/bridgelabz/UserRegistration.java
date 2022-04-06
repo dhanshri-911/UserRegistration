@@ -18,12 +18,13 @@ public class UserRegistration {
         Scanner sc = new Scanner(System.in);
         UserRegistration user = new UserRegistration();
         System.out.println("Welcome to User Registration Program");
-        //user.firstNameCheck();
-        //user.lastNameCheck();
-        //user.email();
-        //user.mobileNum();
-        //user.passWordRule1();
+        user.firstNameCheck();
+        user.lastNameCheck();
+        user.email();
+        user.mobileNum();
+        user.passWordRule1();
         user.passWordRule2();
+        user.passWordRule3();
     }
     public void lastNameCheck() {
         Scanner sc = new Scanner(System.in);
@@ -75,5 +76,15 @@ public class UserRegistration {
         else
             System.out.println("Please Enter a Valid passwor");
     }
-
+    public void passWordRule3() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter password :  ");
+        String passWord = sc.nextLine();
+        boolean check = Pattern.matches("[A-Z]{1}[a-z]{6,}[0-9]{1}", passWord);
+        if (check)
+            System.out.println("Perfect! password");
+        else
+            System.out.println(
+                    "Please Enter a Valid password");
+    }
 }
