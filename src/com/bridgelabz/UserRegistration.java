@@ -25,6 +25,7 @@ public class UserRegistration {
         user.passWordRule1();
         user.passWordRule2();
         user.passWordRule3();
+        user.passWordRule4();
     }
     public void lastNameCheck() {
         Scanner sc = new Scanner(System.in);
@@ -87,4 +88,15 @@ public class UserRegistration {
             System.out.println(
                     "Please Enter a Valid password");
     }
+    public void passWordRule4() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter password :  ");
+        String passWord = sc.nextLine();
+        boolean check = Pattern.matches("[A-Z]{1}[a-z]{5,}[0-9]{1}[!@#$%^&*~]{1}", passWord);
+        if (check)
+            System.out.println("Perfect! password");
+        else
+            System.out.println("Please Enter a Valid password");
+    }
+
 }
